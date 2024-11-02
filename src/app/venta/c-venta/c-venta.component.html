@@ -1,0 +1,77 @@
+<div class="animated fadeIn">
+<div class="container mt-5">
+    <div class="row">
+      <!-- Formulario -->
+      <div class="col-md-8">
+        <div class="container-main p-4">
+          <h3>Registrar Nueva Venta</h3>
+          <form>
+            <!-- Seleccionar Cliente -->
+            <div class="mb-3">
+              <label for="cliente" class="form-label">Seleccionar Cliente</label>
+              <select id="VentaSeleccionado.cliente" name="VentaSeleccionado.cliente" [(ngModel)]="VentaSeleccionado.cliente.id" class="form-select" aria-label="Default select example">
+                <option  selected>Selecciona un cliente</option>
+                <option *ngFor="let cli of VectorClientes" value={{cli.id}}>{{cli.nombre}}</option>
+            </select>
+            </div>
+  
+            <!-- Seleccionar Usuario -->
+            <div class="mb-3">
+              <label for="usuario" class="form-label">Seleccionar Usuario</label>
+              <select id="VentaSeleccionado.usuario" name="VentaSeleccionado.usuario" [(ngModel)]="VentaSeleccionado.usuario.id" class="form-select" aria-label="Default select example">
+                <option  selected>Selecciona un usuario</option>
+                <option *ngFor="let us of VectorUsuarios" value={{us.id}}>{{us.username}}</option>
+            </select>
+            </div>
+  
+            <!-- Seleccionar Insumo -->
+            <div class="mb-3">
+              <label for="insumo" class="form-label">Seleccionar Insumo</label>
+              <div class="d-flex">
+                <select class="form-select" aria-label="Default select example"  id="insumoSeleccionado" name="insumoSeleccionado"
+            [(ngModel)]="insumoSeleccionado">
+                <option [ngValue]="undefined"  selected>Selecciona uno o más insumos</option>
+                <option *ngFor="let ins of VectorInsumos" [ngValue]="ins">{{ins.nombre}}</option>
+            </select>
+                <input type="text" class="form-control" [(ngModel)]="cantidadSeleccion" id="cantidadSeleccion" name="cantidadSeleccion" type="number" placeholder="Cantidad">
+                <button type="button" class="btn btn-primary ms-2" (click)="AdicionarInsumo()"><i class="fa-solid fa-plus me-1"></i> Añadir Insumo</button>
+              </div>
+            </div>
+  
+            <!-- Fecha de Venta -->
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha de Venta</label>
+                <input class="form-control" id="VentaSeleccionado.fecha" name="VentaSeleccionado.fecha" [ngModel]="formatDateTimeLocal(VentaSeleccionado.fecha)" (ngModelChange)="updateDate($event)" id="fecha" type="datetime-local" name="fecha" placeholder="Ingresa la fecha">
+            </div>
+  
+            <!-- Valor Total de la Venta -->
+            <div class="mb-3">
+              <label for="valor" class="form-label">Valor Total de la Venta</label>
+              <input class="form-control" [(ngModel)]="valorVenta" id="valorVenta" type="text" name="valorVenta"
+                placeholder="Valor total de todos los insumos">
+            </div>
+  
+            <!-- Venta a Crédito -->
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="credito" name="credito" [(ngModel)]="ventaACredito">
+              <label class="form-check-label" for="credito">Venta a Crédito</label>
+            </div>
+  
+            <!-- Botón Registrar Venta -->
+            <button type="submit" class="submit-button btn" (click)="GuardarVenta()">Registrar Venta</button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- Resumen de Insumos -->
+      <div class="col-md-4">
+        <div class="resumen p-4">
+          <h5>Resumen de Insumos</h5>
+          <ul id="VentaSeleccionado.insumo" name="VentaSeleccionado.insumo" *ngFor="let ven of getResumenInsumos()" class="list-unstyled">
+            <li>{{ven.nombre}}: {{ven.cantidad}} unidad(es)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

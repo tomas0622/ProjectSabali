@@ -1,0 +1,67 @@
+<body>
+  <main class="main-content">
+    <div class="animated fadeIn">
+      <h1 class="text-center mb-5" style="font-weight: bold; margin-top: 20px;">Ventas</h1>
+      <!-- Fila para el botón y el buscador -->
+      <div class="row justify-content-between align-items-center" style="margin-top: 50px;">
+        <div class="col-md-6">
+          <!-- Input de búsqueda -->
+          <input type="text" class="form-control" placeholder="Buscar venta..." (input)="buscarVenta($event)">
+        </div>
+      </div>
+      <div class="row">
+        <table class="table table-hover" style="margin-top: 20px;">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">(Id)Cliente</th>
+              <th scope="col">(Id)Usuario</th>
+              <th scope="col">(Id)Insumo</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Valor total de venta</th>
+              <th scope="col">Crédito</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ve of VectorVentas | filter: searchTerm">
+              <th scope="row">{{ve.id}}</th>
+              <td>({{ve.idCliente}}) {{ve.nombreCliente}}</td>
+              <td>({{ve.idUsuario}}) {{ve.usernameUsuario}}</td>
+              <td>({{ve.idInsumo}}) {{ve.nombreInsumo}}</td>
+              <td>{{ve.fecha | date:'yyyy-MM-ddTHH:mm'}}</td>
+              <td>{{ve.cantidad}}</td>
+              <td>{{ve.totalVenta}}</td>
+              <td>{{ ve.isCredito ? 'Sí' : 'No' }}</td>
+              <td>
+                <!-- <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#modalVenta" (click)="EditarVenta(ve)">Editar Venta</button> -->
+                <button type="button" class="btn btn-danger me-1" (click)="EliminarVenta(ve)"><i
+                    class="fas fa-trash me-1"></i>Eliminar Venta</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="modalVenta" #modalVenta data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalVentaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalVentaLabel">{{isNew?'Añadir Venta':'Editar Venta:'}} {{this.VentaSeleccionado?.username}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-c-venta [venta]="VentaSeleccionado"></app-c-venta>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="GuardarVenta()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div> -->

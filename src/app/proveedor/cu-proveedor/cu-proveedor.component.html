@@ -1,0 +1,18 @@
+<main class="main-content">
+    <div class="animated fadeInDownBig">
+    <form class="product-form" style="margin-top: 50px;">
+      <label>
+        <span>Nombre del proveedor</span>
+        <input id="nombre" *ngIf="proveedor" type="text" name="nombre" placeholder="Ingresa el nombre del proveedor" [(ngModel)]="proveedor.nombre">
+      </label>
+      <label>
+        <span>Direccion</span>
+        <input id="direccion" *ngIf="proveedor" type="text" name="direccion" placeholder="Ingresa la direccion del proveedor" [(ngModel)]="proveedor.direccion">
+      </label>
+      <label>
+        <span>Telefono</span>
+        <input id="telefono" *ngIf="proveedor" type="number" name="telefono" placeholder="Ingresa el telefono del proveedor" [(ngModel)]="proveedor.telefono">
+      </label>
+    </form>
+</div>
+  </main>

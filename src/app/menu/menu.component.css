@@ -1,0 +1,96 @@
+ /* contenedor del menu */
+ .main-content {
+    padding: 20px 40px;
+}
+
+/* Últimos movimientos */
+.latest-activities {
+    margin-top: 20px;
+}
+
+.latest-activities div {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease;
+}
+
+.latest-activities div:hover {
+    background-color: #e2e6ea;
+    color: rgb(85, 76, 76);
+}
+
+.activity-time {
+    font-size: 0.85em;
+    color: gray;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+#menu-btn {
+    color: white;
+    ;
+}
+
+#menu-btn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#menu-btn:active {
+    color: #b2c2d3;
+    background-color: #1d2b3a;
+}
+
+/* ------------------------------------- */
+@-webkit-keyframes zoomInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+  }
+  
+  @keyframes zoomInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);
+      -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    }
+  }
+  
+  .zoomInLeft {
+    -webkit-animation-name: zoomInLeft;
+    animation-name: zoomInLeft;
+  }
+  
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }

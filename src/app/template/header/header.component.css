@@ -1,0 +1,141 @@
+/* cabecera */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    border-bottom: 1px solid #f0f2f4;
+    background-color: rgb(199, 175, 148);
+    height: 100px;
+}
+
+/* contenedor cabecera izquierda */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* logo cabecera izquierda */
+.header-left .logo svg {
+    width: 24px;
+    height: 24px;
+    fill: #111418;
+}
+
+/* letra cabecera izquierda */
+.header-left h2 {
+    color: #111418;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* navegadores */
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+/* navegadores individuales */
+.nav a {
+    color: #111418;
+    font-size: 14px;
+    font-weight: medium;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    cursor: pointer;
+    color: white;
+}
+
+nav a:active {
+    color: #b2c2d3;
+    background-color: #1d2b3a;
+}
+
+/* cabecera derecha */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* cada icono */
+.icon-button {
+    background-color: #f0f2f4;
+    border: none;
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+.icon-button:hover {
+    box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    -moz-transform:translate(0px,5px);
+}
+
+/* foto de perfil */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+#menu-btn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#menu-btn:active {
+    color: #ffffff;
+    background-color: #1d2b3a;
+}
+
+#dropdown-venta {
+    background-color: rgb(199, 175, 148);
+    color: #111418;
+    font-size: 14px;
+    font-weight: medium;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#dropdown-venta:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#dropdown-venta:active {
+    color: #b2c2d3;
+    background-color: #1d2b3a;
+}
+
+/* Estilo para cambiar el color de fondo de cada opción cuando esté el mouse encima */
+#dropdown-venta .dropdown-item:hover {
+    background-color: black;
+    color: white;
+}
+
+.nav li {
+    border-left: 1px solid rgba(76, 73, 73, 0.376); /* Separador entre ítems */
+    padding-left: 15px;
+  }
+  .nav li:first-child {
+    border-left: none;
+  }
+  

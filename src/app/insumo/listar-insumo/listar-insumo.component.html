@@ -1,0 +1,69 @@
+<body>
+  <main class="main-content">
+    <div class="animated fadeIn">
+      <h1 class="text-center mb-5" style="font-weight: bold; margin-top: 20px;">Insumos</h1>
+      <!-- Fila para el botón y el buscador -->
+      <div class="row justify-content-between align-items-center" style="margin-top: 50px;">
+        <div class="col-md-6">
+          <!-- Input de búsqueda -->
+          <input type="text" class="form-control" placeholder="Buscar insumo..." (input)="buscarInsumo($event)">
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalInsumo"
+            (click)="NuevoInsumo()"><i class="fas fa-user-plus me-2"></i>Añadir Insumo</button>
+        </div>
+      </div>
+      <div class="row">
+        <table class="table table-hover" style="margin-top: 20px;">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Precio Unitario</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Proveedor</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ins of VectorInsumos | filter:searchTerm">
+              <th scope="row">{{ins.id}}</th>
+              <td>{{ins.nombre}}</td>
+              <td>{{ins.descripcion}}</td>
+              <td>{{ins.precioUnitario}}</td>
+              <td>{{ins.stock}}</td>
+              <td>{{ins.idProveedor}}</td>
+              <td>
+                <button type="button" class="btn btn-primary me-1" data-bs-toggle="modal" data-bs-target="#modalInsumo"
+                  (click)="EditarInsumo(ins)"><i class="fas fa-pencil-alt me-1"></i>Editar Insumo</button>
+                <button type="button" class="btn btn-danger me-1" (click)="EliminarInsumo(ins)"><i class="fas fa-trash me-1"></i>Eliminar Insumo</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+
+<!-- Modal -->
+<div class="modal fade" id="modalInsumo" #modalInsumo data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="modalInsumoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" [ngClass]="{'modal-success': isNew, 'modal-primary': !isNew}">
+      <div class="modal-header" [ngClass]="{'bg-success': isNew, 'bg-primary': !isNew}">
+        <h1 class="modal-title fs-5" id="modalInsumoLabel">{{isNew?'Añadir Insumo':'Editar Insumo:'}}
+          {{this.insumoSeleccionado?.nombre}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-cu-insumo [insumo]="insumoSeleccionado"></app-cu-insumo>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" [ngClass]="{'btn-success': isNew, 'btn-primary': !isNew}" (click)="GuardarInsumo()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

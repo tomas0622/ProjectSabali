@@ -1,0 +1,14 @@
+<main class="main-content">
+  <div class="animated fadeInDownBig">
+    <form class="product-form" style="margin-top: 50px;">
+      <label>
+        <span>Username del usuario</span>
+        <input id="nombre" *ngIf="usuario" type="text" name="username" placeholder="Ingresa el nombre del usuario" [(ngModel)]="usuario.username">
+      </label>
+      <label>
+        <span>Cargo</span>
+        <input id="descripcion" *ngIf="usuario" type="text" name="rol" placeholder="Ingresa una descripción del usuario" [(ngModel)]="usuario.rol">
+      </label>
+    </form>
+  </div>
+  </main>

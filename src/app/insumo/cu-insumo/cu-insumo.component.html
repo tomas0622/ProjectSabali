@@ -1,0 +1,30 @@
+<main class="main-content">
+  <div class="animated fadeInDownBig">
+    <form class="product-form" style="margin-top: 50px;">
+      <label>
+        <span>Nombre del insumo</span>
+        <input id="nombre" *ngIf="insumo" type="text" name="nombre" placeholder="Ingresa el nombre del insumo" [(ngModel)]="insumo.nombre">
+      </label>
+      <label>
+        <span>Descripción</span>
+        <textarea id="descripcion" *ngIf="insumo" type="text" name="descripcion" placeholder="Ingresa una descripción del insumo" [(ngModel)]="insumo.descripcion"></textarea>
+      </label>
+      <label>
+        <span>Stock</span>
+        <input id="stock" *ngIf="insumo" type="number" name="stock" placeholder="Ingresa la cantidad del insumo" [(ngModel)]="insumo.stock">
+      </label>
+      <label>
+        <span>Precio</span>
+        <input id="precio" *ngIf="insumo" type="number" name="precio" placeholder="Ingresa el precio" [(ngModel)]="insumo.precioUnitario">
+      </label>
+      <label>
+        <span>Asignar Proveedor</span>
+        <select id="insumo.idProveedor" *ngIf="insumo" name="insumo.idProveedor" [(ngModel)]="insumo.idProveedor" class="form-select" aria-label="Default select example">
+          <option  selected>Selecciona un proveedor</option>
+          <option *ngFor="let pro of VectorProveedores" value={{pro.id}}>({{pro.id}}){{pro.nombre}}</option>
+      </select>
+      </label>
+      
+    </form>
+  </div>
+  </main>

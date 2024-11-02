@@ -1,0 +1,101 @@
+/* contenedor del menu */
+.main-content {
+    padding: 20px 40px;
+  }
+
+  /* formulario del producto */
+  .product-form {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .product-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+
+  .product-form span {
+    color: #111418;
+    font-size: 16px;
+    font-weight: medium;
+    margin-bottom: 8px;
+  }
+
+  .product-form input,
+  .product-form textarea,
+  .product-form select {
+    border: 1px solid #cccccc;
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .product-form textarea {
+    min-height: 120px;
+  }
+
+  /* boton de añadir */
+  .submit-button {
+    background-color: rgb(182, 160, 135);
+    color: rgb(8, 8, 8);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+
+  .submit-button:hover {
+    cursor: pointer;
+    color: white;
+  }
+
+  .submit-button:active {
+    color: #b2c2d3;
+    background-color: #1d2b3a;
+  }
+  /* ------------------------------------- */
+  @-webkit-keyframes fadeInDownBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -2000px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInDownBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -2000px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInDownBig {
+    -webkit-animation-name: fadeInDownBig;
+    animation-name: fadeInDownBig;
+  }
+  
+  .animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }

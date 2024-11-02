@@ -1,0 +1,26 @@
+<main class="main-content">
+  <div class="animated fadeInDownBig">
+    <form class="product-form" style="margin-top: 50px;">
+      <label>
+        <span>Nombre del cliente</span>
+        <input id="nombre" *ngIf="cliente" type="text" name="nombre" placeholder="Ingresa el nombre del cliente" [(ngModel)]="cliente.nombre">
+      </label>
+      <label>
+        <span>Primer Apellido</span>
+        <input id="primerApellido" *ngIf="cliente" type="text" name="primerApellido" placeholder="Ingresa una descripción del cliente" [(ngModel)]="cliente.primerApellido">
+      </label>
+      <label>
+        <span>Segundo Apellido</span>
+        <input id="segundoApellido" *ngIf="cliente" type="text" name="segundoApellido" placeholder="Ingresa el segundo apellido del cliente" [(ngModel)]="cliente.segundoApellido">
+      </label>
+      <label>
+        <span>Direccion</span>
+        <input id="direccion" *ngIf="cliente" type="text" name="direccion" placeholder="Ingresa la direccion del cliente" [(ngModel)]="cliente.direccion">
+      </label>
+      <label>
+        <span>Telefono</span>
+        <input id="telefono" *ngIf="cliente" type="number" name="telefono" placeholder="Ingresa el telefono del cliente" [(ngModel)]="cliente.telefono">
+      </label>
+    </form>
+  </div>
+  </main>

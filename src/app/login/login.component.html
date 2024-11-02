@@ -1,0 +1,47 @@
+<div class="layout-container">
+    <div class="animated zoomIn">
+        <div class="layout-content-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="image-container"
+                        style="background: url('https://cdn.usegalileo.ai/sdxl10/4cc95a93-fb8b-4e3e-96ee-fcfaa7aea4c6.png') center center / cover no-repeat; height: 218px; border-radius: 16px;">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <h3 class="title">Bienvenidos</h3>
+                    </div>
+                    <div class="col-12">
+                        <h3 class="title">Inicio De Sesión Sabali</h3>
+                    </div>
+                </div>
+
+                <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+                    <div class="input-group">
+                        <label class="label-input">
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Usuario" aria-label="Contraseña"
+                                    required>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <label class="label-input">
+                            <div class="col-12">
+                                <input type="password" class="form-control" placeholder="Contraseña"
+                                    aria-label="Contraseña" required>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-12">
+                        <button id="button-metalizado" type="submit" class="btn btn-primary">
+                            <span>Iniciar Sesion</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

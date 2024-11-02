@@ -1,0 +1,13 @@
+<main class="main-content">
+    <div class="animated zoomInLeft">
+        <h1 class="text-center">Menú principal</h1>
+    <!-- Últimos movimientos -->
+    <h2>Últimos movimientos</h2>
+    <div class="latest-activities">
+        <div *ngFor="let mov of VectorMovimientos let i = index">
+            <p>Se realizó un {{mov.operacion}} en la tabla {{mov.tabla}} con el ID {{mov.idRegistro}}</p>
+            <p class="activity-time">Fecha: {{mov.fecha}}</p>
+        </div>
+    </div>
+</div>
+</main>

@@ -1,0 +1,189 @@
+/* Base styles */
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1 {
+    font-size: 28px; /* Más pequeño que antes */
+    font-weight: bold;
+    border-bottom: 2px solid #cccccc; /* Línea inferior */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  table th, table td {
+    padding: 8px 12px; /* Menos padding para hacer la tabla más compacta */
+    text-align: center;
+  }
+  th:first-child, td:first-child {
+    width: 50px; /* Columna de "Id" más estrecha */
+  }
+  
+
+/* contenedor del menu */
+.main-content {
+    padding: 20px 40px;
+}
+
+/* formulario del producto */
+.product-form {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.product-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.product-form span {
+    color: #111418;
+    font-size: 16px;
+    font-weight: medium;
+    margin-bottom: 8px;
+}
+
+.product-form input,
+.product-form textarea,
+.product-form select {
+    border: 1px solid #cccccc;
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.product-form textarea {
+    min-height: 120px;
+}
+
+/* boton de añadir */
+.submit-button {
+    background-color: rgb(182, 160, 135);
+    color: rgb(8, 8, 8);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.submit-button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.submit-button:active {
+    color: #b2c2d3;
+    background-color: #1d2b3a;
+}
+
+.image-preview {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+#Pr {
+    color: white;
+}
+
+#menu-btn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#menu-btn:active {
+    color: #ffffff;
+    background-color: #1d2b3a;
+}
+
+.btn {
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+
+.btn:hover {
+    box-shadow: 0 8px 8px 0 #000000, 0 8px 8px 0 #000000;
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    -moz-transform: translate(0px, 5px);
+}
+
+
+/* Modal customization */
+/* Estilos personalizados para el modal */
+.modal-success .modal-header {
+    background-color: #28a745; /* Verde para añadir */
+  }
+  
+  .modal-primary .modal-header {
+    background-color: #007bff; /* Azul para editar */
+  }
+  
+  .modal-success .modal-content {
+    border: 2px solid #28a745;
+  }
+  
+  .modal-primary .modal-content {
+    border: 2px solid #007bff;
+  }
+  
+  /* Botón dinámico */
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-success:hover,
+  .btn-primary:hover {
+    box-shadow: 0 8px 8px 0 #000000, 0 8px 8px 0 #000000;
+    transform: translate(0px, 5px);
+  }
+
+/* ------------------------------------- */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
